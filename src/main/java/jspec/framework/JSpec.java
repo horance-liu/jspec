@@ -42,7 +42,7 @@ public final class JSpec extends Runner {
   }
 
   public static void it(String behavior, Block block) {
-    currentCtxt().addTest(behavior, block);
+    currentCtxt().addSpec(behavior, block);
   }
 
   public static void beforeEach(Block block) {

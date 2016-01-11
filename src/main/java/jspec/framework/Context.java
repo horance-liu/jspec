@@ -46,15 +46,15 @@ public class Context implements Executor {
     afters.add(block);
   }
 
-  public void addTest(String behavior, Block block) {
-    Description test = createTestDescription(desc.getClassName(), behavior);
-    desc.addChild(test);
-    addExecutor(test, block);
+  public void addSpec(String behavior, Block block) {
+    Description spec = createTestDescription(desc.getClassName(), behavior);
+    desc.addChild(spec);
+    addExecutor(spec, block);
   }
 
   private void addExecutor(Description desc, Block block) {
-    Spec test = new Spec(desc, blocksInContext(block));
-    executors.add(test);
+    Spec spec = new Spec(desc, blocksInContext(block));
+    executors.add(spec);
   }
 
   private Block blocksInContext(Block block) {
