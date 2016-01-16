@@ -33,7 +33,10 @@ public class Context implements Executor {
   public void addChild(Context child) {
     desc.addChild(child.desc);
     executors.add(child);
-    
+    addFixture(child);
+  }
+  
+  private void addFixture(Context child) {
     child.addBefore(collect(befores));
     child.addAfter(collect(afters));
   }
